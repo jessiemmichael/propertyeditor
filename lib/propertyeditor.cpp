@@ -110,6 +110,11 @@ void PropertyEditor::clearValidators()
 	m_validators.clear();
 }
 
+QList<PropertyInterface*>* PropertyEditor::plugins()
+{
+   return &m_plugins;
+}
+
 void PropertyEditor::setModel(PropertyModel * model)
 {
    m_model = model;

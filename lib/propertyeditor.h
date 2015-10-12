@@ -62,7 +62,7 @@ public:
 	void setValidator(QVariant::Type type, PropertyValidator * validator);
 	PropertyValidator* validator(QVariant::Type type);
 	void clearValidators();
-
+   QList<PropertyInterface*>* plugins();
    void setModel(PropertyModel * model);
 private:
 	void loadPlugins();
