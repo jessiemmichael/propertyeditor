@@ -52,6 +52,7 @@ QWidget* Numbers::createEditor(QWidget * parent, const QModelIndex & index)
 		QDoubleSpinBox *dsb = new QDoubleSpinBox(parent);
 		dsb->setMaximum(1e10);
 		dsb->setMinimum(-1e10);
+      dsb->setDecimals(6);
 		dsb->setSingleStep(0.1);
 		connect(dsb, SIGNAL(valueChanged(double)), this, SLOT(setValue(double)));
 		return dsb;
