@@ -64,6 +64,7 @@ PropertyEditor::PropertyEditor(QWidget *parent)
 
 void PropertyEditor::loadPlugins()
 {
+/*
 	QDir pluginsDir = QDir(qApp->applicationDirPath());
 #if defined(Q_OS_WIN)
 	if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
@@ -78,8 +79,20 @@ void PropertyEditor::loadPlugins()
 	pluginsDir.cd(LIB_INSTALL_DIR);
 #endif
 	pluginsDir.cd("propertyEditor");
+*/
 
-	foreach(QString fileName, pluginsDir.entryList(QDir::Files))
+   QDir pluginsDir;
+   foreach (QString path, qApp->libraryPaths())
+   {
+      QDir dir = QDir(path);
+      if(dir.cd("propertyEditor"))
+      {
+         pluginsDir=dir;
+         break;
+      }
+   }
+   
+   foreach(QString fileName, pluginsDir.entryList(QDir::Files))
 	{
 		QPluginLoader loader(pluginsDir.absoluteFilePath(fileName));
 		loader.setLoadHints(QLibrary::ResolveAllSymbolsHint);
