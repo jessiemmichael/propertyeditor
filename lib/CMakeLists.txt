@@ -15,4 +15,4 @@ set_target_properties(PropertyEditor PROPERTIES	SOVERSION "${PROPERTYEDITOR_VERS
 target_link_libraries(PropertyEditor ${QT_QTGUI_LIBRARY} ${QT_QTCORE_LIBRARY} )
 
 install(TARGETS PropertyEditor ${INSTALL_TARGETS_DEFAULT_ARGS} )
-install(FILES propertyeditor.h propertyinterface.h propertyvalidator.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+install(FILES propertydelegate.h propertyeditor.h propertyinterface.h propertymodel.h propertyvalidator.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)

@@ -52,7 +52,6 @@ add_definitions (-DLIB_INSTALL_DIR=\"${LIB_INSTALL_DIR}\")
 
 add_subdirectory(lib)
 add_subdirectory(plugins)
-add_subdirectory(examples)
 
 CONFIGURE_FILE(
   "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
@@ -62,12 +61,8 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
-install(FILES cmake/modules/FindPropertyEditor.cmake DESTINATION ${CMAKE_ROOT}/Modules COMPONENT Devel)
-
 # This needs to be run very last so other parts of the scripts can take
 # advantage of this.
 IF(NOT PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE)
     SET(PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE 1 CACHE INTERNAL "Flag to track whether this is the first time running CMake or if CMake has been configured before")
 ENDIF(NOT PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE)
-
-
