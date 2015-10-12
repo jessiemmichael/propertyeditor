@@ -29,8 +29,8 @@
 #ifndef PROPERTYEDITORPROPERTYEDITOR_H
 #define PROPERTYEDITORPROPERTYEDITOR_H
 
-#include <QTreeView>
-#include <QList>
+#include <QtGui/QTreeView>
+#include <QtCore/QList>
 #include "propertyvalidator.h"
 
 #ifdef WIN32

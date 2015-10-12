@@ -30,7 +30,7 @@
 #ifndef PROPERTYEDITORPROPERTYVALIDATOR_H
 #define PROPERTYEDITORPROPERTYVALIDATOR_H
 
-#include <QValidator>
+#include <QtGui/QValidator>
 
 #ifdef WIN32
 #ifdef LIB_EXPORTS

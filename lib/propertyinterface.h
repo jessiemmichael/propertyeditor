@@ -30,10 +30,10 @@
 #ifndef PROPERTYEDITORPROPERTYINTERFACE_H
 #define PROPERTYEDITORPROPERTYINTERFACE_H
 
-#include <QObject>
-#include <QVariant>
-#include <QModelIndex>
-#include <QList>
+#include <QtCore/QObject>
+#include <QtCore/QVariant>
+#include <QtCore/QModelIndex>
+#include <QtCore/QList>
 
 #ifdef WIN32
 #ifdef LIB_EXPORTS

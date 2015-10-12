@@ -30,9 +30,9 @@
 #ifndef PROPERTYEDITORPROPERTYMODEL_H
 #define PROPERTYEDITORPROPERTYMODEL_H
 
-#include <QAbstractItemModel>
-#include <QList>
-#include <QPointer>
+#include <QtCore/QAbstractItemModel>
+#include <QtCore/QList>
+#include <QtCore/QPointer>
 
 #ifdef WIN32
 #ifdef LIB_EXPORTS
