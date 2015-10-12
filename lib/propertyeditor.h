@@ -49,6 +49,7 @@ namespace PropertyEditor
 class PropertyInterface;
 class PropertyModel;
 class PropertyDelegate;
+
 class PROPERTYEDITOR_EXPORTS PropertyEditor : public QTreeView
 {
 	Q_OBJECT

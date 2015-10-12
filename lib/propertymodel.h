@@ -34,13 +34,22 @@
 #include <QList>
 #include <QPointer>
 
+#ifdef WIN32
+#ifdef LIB_EXPORTS
+#define PROPERTYEDITOR_EXPORTS __declspec(dllexport)
+#else
+#define PROPERTYEDITOR_EXPORTS __declspec(dllimport)
+#endif
+#else
+#define PROPERTYEDITOR_EXPORTS
+#endif
 
 namespace PropertyEditor
 {
 
 class PropertyInterface;
 
-class PropertyModel : public QAbstractItemModel
+class PROPERTYEDITOR_EXPORTS PropertyModel : public QAbstractItemModel
 {
 	Q_OBJECT
 
