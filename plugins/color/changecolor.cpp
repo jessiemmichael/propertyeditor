@@ -41,7 +41,7 @@ ChangeColor::ChangeColor(QWidget *parent)
 
 void ChangeColor::onClick()
 {
-	QColor color = QColorDialog::getColor(m_color, this);
+   QColor color = QColorDialog::getColor(m_color, this, tr("Select Color"), QColorDialog::ShowAlphaChannel);
 	if (color.isValid())
 	{
 		m_color = color;
