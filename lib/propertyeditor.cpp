@@ -54,7 +54,7 @@ PropertyEditor::PropertyEditor(QWidget *parent)
 	m_delegate = new PropertyDelegate(this);
 	setItemDelegate(m_delegate);
 	m_model = new PropertyModel(this, 0, &m_plugins);
-	setModel(m_model);
+   QTreeView::setModel(m_model);
 	setSelectionMode(QTreeView::SingleSelection);
 	setSelectionBehavior(QTreeView::SelectRows);
 	setRootIsDecorated(true);
@@ -108,6 +108,12 @@ PropertyValidator* PropertyEditor::validator(QVariant::Type type)
 void PropertyEditor::clearValidators()
 {
 	m_validators.clear();
+}
+
+void PropertyEditor::setModel(PropertyModel * model)
+{
+   m_model = model;
+   QTreeView::setModel(m_model);
 }
 
 void PropertyEditor::setObject(QObject * object)

@@ -63,6 +63,7 @@ public:
 	PropertyValidator* validator(QVariant::Type type);
 	void clearValidators();
 
+   void setModel(PropertyModel * model);
 private:
 	void loadPlugins();
 
