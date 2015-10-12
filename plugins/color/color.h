@@ -34,6 +34,8 @@
 
 using namespace PropertyEditor;
 
+class ChangeColor;
+
 /**
 	@author BogDan Vatra <bogdan@licentia.eu>
 */
@@ -56,6 +58,8 @@ public:
 
 public slots:
 	void setValue(const QColor& c);
+private:
+	ChangeColor * m_changeColor;
 };
 
 #endif

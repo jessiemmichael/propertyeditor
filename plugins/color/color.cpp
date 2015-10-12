@@ -41,14 +41,21 @@ Color::Color(QObject* parent, QObject* object, int property, const PropertyModel
 QWidget* Color::createEditor(QWidget * parent, const QModelIndex & index)
 {
 	Q_UNUSED(index);
-	ChangeColor *cf = new ChangeColor(parent);
-	connect(cf, SIGNAL(colorChanged(const QColor&)), this, SLOT(setValue(const QColor&)));
-	return cf;
+	m_changeColor = new ChangeColor(parent);
+   QPixmap pixMap(22,22);
+   QColor color = value().value<QColor>();
+   pixMap.fill(color);
+   m_changeColor->setIcon(QIcon(pixMap));
+	connect(m_changeColor, SIGNAL(colorChanged(const QColor&)), this, SLOT(setValue(const QColor&)));
+	return m_changeColor;
 }
 
 void Color::setValue(const QColor& f)
 {
 	PropertyInterface::setValue(f);
+   QPixmap pixMap(22,22);
+   pixMap.fill(f);
+   m_changeColor->setIcon(QIcon(pixMap));
 }
 
 QVariant Color::data(const QModelIndex & index)
