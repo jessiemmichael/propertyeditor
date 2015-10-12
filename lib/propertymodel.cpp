@@ -75,7 +75,7 @@ void PropertyModel::refreshProperties()
 					}
 }
 
-PropertyInterface* PropertyModel::createPropery(QObject* object, int property) const
+PropertyInterface* PropertyModel::createProperty(QObject* object, int property) const
 {
 	PropertyInterface* pi = 0;
 	if (object->metaObject()->property(property).isValid() && object->metaObject()->property(property).isWritable() && object->metaObject()->property(property).isReadable())

@@ -56,7 +56,7 @@ void PropertyInterface::refreshPropertis(const PropertyModel * pm)
 	for (int i = 0;i < metaObject()->propertyCount();i++)
 		if (metaObject()->property(i).isUser() && metaObject()->property(i).isValid() && metaObject()->property(i).isWritable() && metaObject()->property(i).isReadable())
 		{
-			PropertyInterface* pi = pm->createPropery(this, i);
+			PropertyInterface* pi = pm->createProperty(this, i);
 			if (pi)
 				m_properties.push_back(pi);
 		}

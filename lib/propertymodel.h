@@ -65,7 +65,7 @@ public:
 	Qt::ItemFlags flags(const QModelIndex &index) const;
 	QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
 
-	PropertyInterface* createPropery(QObject* object, int property) const;
+	PropertyInterface* createProperty(QObject* object, int property) const;
 
 	void resetModel();
 
