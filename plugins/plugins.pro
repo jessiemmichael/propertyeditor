@@ -17,4 +17,5 @@ SUBDIRS += numbers \
  pen \
  pixmap \
  bool \
- stringlist
+ stringlist \
+ vector3d
