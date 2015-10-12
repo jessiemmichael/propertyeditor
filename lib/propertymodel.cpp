@@ -62,7 +62,7 @@ void PropertyModel::refreshProperties()
 	m_properties.clear();
 	clearCreatedProperties();
 	if (m_object && m_plugins)
-		for (int i = 0;i < m_object->metaObject()->propertyCount();i++)
+		for (int i = 1;i < m_object->metaObject()->propertyCount();i++)
 			if (m_object->metaObject()->property(i).isDesignable() && m_object->metaObject()->property(i).isValid() && m_object->metaObject()->property(i).isWritable() && m_object->metaObject()->property(i).isReadable())
 				foreach(PropertyInterface* plugin, (*m_plugins))
 					if (plugin->canHandle(m_object, i))
