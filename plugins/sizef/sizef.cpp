@@ -114,4 +114,4 @@ PropertyInterface* SizeF::createInstance(QObject * object, int property, const P
 	return new SizeF(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(sizef, SizeF);
+//Q_EXPORT_PLUGIN2(sizef, SizeF);

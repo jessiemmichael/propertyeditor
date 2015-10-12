@@ -125,4 +125,4 @@ PropertyInterface* Brush::createInstance(QObject * object, int property, const P
 	return new Brush(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(brush, Brush);
+//Q_EXPORT_PLUGIN2(brush, Brush);

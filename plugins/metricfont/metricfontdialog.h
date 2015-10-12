@@ -30,7 +30,7 @@
 #ifndef METRICFONTDIALOG_H
 #define METRICFONTDIALOG_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 #include "ui_metricfontdialog.h"
 #include <QFontDatabase>
 #include <QStringListModel>
@@ -40,7 +40,7 @@ class MetricFontDialog : public QDialog, private Ui::metricFontDialog
 	Q_OBJECT
 
 public:
-	MetricFontDialog(QWidget* parent = 0, Qt::WFlags fl = 0);
+	MetricFontDialog(QWidget* parent = 0, Qt::WindowFlags fl = 0);
 	~MetricFontDialog();
 	void setWritingSystem(QFontDatabase::WritingSystem ws);
 	void setFont(const QFont & font);

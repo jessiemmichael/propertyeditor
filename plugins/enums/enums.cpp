@@ -30,7 +30,7 @@
 #include <QtCore>
 #include <QMetaProperty>
 #include <QMetaEnum>
-#include <QComboBox>
+#include <QtWidgets/QComboBox>
 
 #include "enums.h"
 
@@ -93,4 +93,4 @@ PropertyInterface* Enums::createInstance(QObject * object, int property, const P
 	return new Enums(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(enums, Enums);
+//Q_EXPORT_PLUGIN2(enums, Enums);

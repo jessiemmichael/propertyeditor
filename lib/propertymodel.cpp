@@ -90,14 +90,16 @@ PropertyInterface* PropertyModel::createProperty(QObject* object, int property) 
 
 void PropertyModel::setObject(QObject * object)
 {
+    beginResetModel();
 	m_object = object;
 	refreshProperties();
-	reset();
+	endResetModel();
 }
 
 void PropertyModel::resetModel() 
 {
-	reset();
+    beginResetModel();
+    endResetModel();
 }
 
 QModelIndex PropertyModel::index(int row, int column, const QModelIndex & parent) const

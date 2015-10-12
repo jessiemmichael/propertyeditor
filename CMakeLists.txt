@@ -39,13 +39,15 @@ IF(APPLE)
     ENDIF(NOT PROPERTYEDITOR_HAS_BEEN_RUN_BEFORE)
 ENDIF(APPLE)
 
-find_package(Qt4 REQUIRED)
+set (CMAKE_PREFIX_PATH)
+find_package(Qt5Widgets)
+find_package(Qt5Core)
 
 set( QT_USE_QTGUI   TRUE )
-include( ${QT_USE_FILE} )
+
 include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${QT_INCLUDE_DIR}
+        ${Qt5Widgets_INCLUDE_DIRS} ${Qt5Core_INCLUDE_DIRS}
         ${CMAKE_CURRENT_BINARY_DIR})
 
 add_definitions (-DLIB_INSTALL_DIR=\"${LIB_INSTALL_DIR}\")

@@ -40,7 +40,7 @@
 ****************************************************************************/
 
 #include <QStringListModel>
-#include <QFileDialog>
+#include <QtWidgets/QFileDialog>
 #include <QTextStream>
 
 #include "stringlisteditor.h"

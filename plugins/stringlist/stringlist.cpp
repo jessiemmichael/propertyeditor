@@ -31,7 +31,7 @@
 #include <QMetaProperty>
 #include <QMetaEnum>
 
-#include <QPushButton>
+#include <QtWidgets/QPushButton>
 
 #include "stringlist.h"
 #include "stringlisteditor.h"
@@ -111,4 +111,4 @@ PropertyInterface* StringList::createInstance(QObject * object, int property, co
 	return new StringList(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(stringlist, StringList);
+//Q_EXPORT_PLUGIN2(stringlist, StringList);

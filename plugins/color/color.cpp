@@ -103,4 +103,4 @@ PropertyInterface* Color::createInstance(QObject * object, int property, const P
 	return new Color(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(color, Color);
+//Q_EXPORT_PLUGIN2(color, Color);

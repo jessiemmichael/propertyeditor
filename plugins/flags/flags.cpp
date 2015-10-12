@@ -30,8 +30,8 @@
 #include <QtCore>
 #include <QMetaProperty>
 #include <QMetaEnum>
-#include <QPushButton>
-#include <QListWidget>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QListWidget>
 
 #include "flagslist.h"
 #include "flags.h"
@@ -118,4 +118,4 @@ PropertyInterface* Flags::createInstance(QObject * object, int property, const P
 }
 
 
-Q_EXPORT_PLUGIN2(flags, Flags);
+//Q_EXPORT_PLUGIN2(flags, Flags);

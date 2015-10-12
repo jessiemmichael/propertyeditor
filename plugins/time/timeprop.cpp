@@ -30,7 +30,7 @@
 #include <QtCore>
 #include <QMetaProperty>
 #include <QMetaEnum>
-#include <QTimeEdit>
+#include <QtWidgets/QTimeEdit>
 
 #include "timeprop.h"
 
@@ -97,4 +97,4 @@ PropertyInterface* TimeProp::createInstance(QObject * object, int property, cons
 	return new TimeProp(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(timeProp, TimeProp);
+//Q_EXPORT_PLUGIN2(timeProp, TimeProp);

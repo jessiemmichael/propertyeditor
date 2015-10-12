@@ -143,4 +143,4 @@ PropertyInterface* RectF::createInstance(QObject * object, int property, const P
 	return new RectF(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(rect, RectF);
+//Q_EXPORT_PLUGIN2(rect, RectF);

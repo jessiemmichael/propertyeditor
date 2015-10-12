@@ -39,6 +39,7 @@ class Brush : public PropertyInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PropertyEditor::PropertyInterface);
+	Q_PLUGIN_METADATA(IID "net.erergid.PropertyEditorPlugin" FILE "brushplugin.json")
 
 	Q_ENUMS(BrushStyle)
 

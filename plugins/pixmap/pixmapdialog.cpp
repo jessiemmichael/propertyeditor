@@ -27,11 +27,11 @@
  *   GNU General Public License for more details.                          *
  ****************************************************************************/
 
-#include <QFileDialog>
+#include <QtWidgets/QFileDialog>
 
 #include "pixmapdialog.h"
 
-PixmapDialog::PixmapDialog(QWidget* parent, Qt::WFlags fl)
+PixmapDialog::PixmapDialog(QWidget* parent, Qt::WindowFlags fl)
 		: QDialog(parent, fl), Ui::pixmapDialog()
 {
 	setupUi(this);

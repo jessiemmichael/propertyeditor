@@ -30,7 +30,7 @@
 #ifndef CHANGECOLOR_H
 #define CHANGECOLOR_H
 
-#include <QPushButton>
+#include <QtWidgets/QPushButton>
 
 /**
 	@author BogDan Vatra <bogdan@licentia.eu>

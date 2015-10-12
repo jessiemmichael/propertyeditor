@@ -30,8 +30,8 @@
 #ifndef PIXMAPDIALOG_H
 #define PIXMAPDIALOG_H
 
-#include <QDialog>
-#include <QGraphicsView>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QGraphicsView>
 
 #include "ui_pixmapDialog.h"
 
@@ -40,7 +40,7 @@ class PixmapDialog : public QDialog, private Ui::pixmapDialog
 	Q_OBJECT
 
 public:
-	PixmapDialog(QWidget* parent = 0, Qt::WFlags fl = 0);
+	PixmapDialog(QWidget* parent = 0, Qt::WindowFlags fl = 0);
 	void setPixmap(const QPixmap & pixmap);
 	QPixmap pixmap();
 

@@ -42,6 +42,7 @@ class RectF : public PropertyEditor::PropertyInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PropertyEditor::PropertyInterface);
+	Q_PLUGIN_METADATA(IID "net.erergid.PropertyEditorPlugin" FILE "rectfplugin.json")
 
 	Q_PROPERTY(qreal x READ x WRITE setX USER true)
 	Q_PROPERTY(qreal y READ y WRITE setY USER true)

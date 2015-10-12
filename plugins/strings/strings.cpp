@@ -31,7 +31,7 @@
 #include <QMetaProperty>
 #include <QMetaEnum>
 
-#include <QLineEdit>
+#include <QtWidgets/QLineEdit>
 
 #include "strings.h"
 
@@ -106,4 +106,4 @@ PropertyInterface* Strings::createInstance(QObject * object, int property, const
 	return new Strings(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(strings, Strings);
+//Q_EXPORT_PLUGIN2(strings, Strings);

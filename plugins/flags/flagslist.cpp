@@ -29,7 +29,7 @@
 
 #include "flagslist.h"
 
-FlagsList::FlagsList(QWidget* parent, Qt::WFlags fl)
+FlagsList::FlagsList(QWidget* parent, Qt::WindowFlags fl)
 		: QDialog(parent, fl), Ui::flagsDialog()
 {
 	setupUi(this);

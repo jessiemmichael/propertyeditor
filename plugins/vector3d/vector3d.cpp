@@ -130,4 +130,4 @@ PropertyInterface* Vector3D::createInstance(QObject * object, int property, cons
 	return new Vector3D(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(vector3d, Vector3D);
+//Q_EXPORT_PLUGIN2(vector3d, Vector3D);

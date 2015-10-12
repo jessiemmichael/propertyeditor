@@ -113,4 +113,4 @@ PropertyInterface* Size::createInstance(QObject * object, int property, const Pr
 	return new Size(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(size, Size);
+//Q_EXPORT_PLUGIN2(size, Size);

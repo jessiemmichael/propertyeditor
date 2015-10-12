@@ -96,5 +96,5 @@ PropertyInterface* Font::createInstance(QObject * object, int property, const Pr
 	return new Font(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(font, Font);
+//Q_EXPORT_PLUGIN2(font, Font);
 

@@ -27,7 +27,7 @@
  *   GNU General Public License for more details.                          *
  ****************************************************************************/
 
-#include <QColorDialog>
+#include <QtWidgets/QColorDialog>
 
 #include "changecolor.h"
 

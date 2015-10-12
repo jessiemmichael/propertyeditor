@@ -30,7 +30,7 @@
 #include <QtCore>
 #include <QMetaProperty>
 #include <QMetaEnum>
-#include <QPushButton>
+#include <QtWidgets/QPushButton>
 
 #include "pixmap.h"
 #include "pixmapdialog.h"
@@ -96,6 +96,6 @@ PropertyInterface* Pixmap::createInstance(QObject * object, int property, const 
 	return new Pixmap(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(pixmap, Pixmap);
+//Q_EXPORT_PLUGIN2(pixmap, Pixmap);
 
 

@@ -30,7 +30,7 @@
 #include <QtCore>
 #include <QMetaProperty>
 #include <QMetaEnum>
-#include <QDateEdit>
+#include <QtWidgets/QDateEdit>
 
 #include "date.h"
 
@@ -97,4 +97,4 @@ PropertyInterface* Date::createInstance(QObject * object, int property, const Pr
 	return new Date(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(date, Date);
+//Q_EXPORT_PLUGIN2(date, Date);

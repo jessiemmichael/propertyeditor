@@ -29,7 +29,7 @@
 
 #include <QPainter>
 #include <QModelIndex>
-#include <QApplication>
+#include <QtWidgets/QApplication>
 
 #include "propertydelegate.h"
 #include "propertyinterface.h"
@@ -64,7 +64,7 @@ void PropertyDelegate::paint(QPainter * painter, const QStyleOptionViewItem & op
 	if (index.column())
 		option.font.setBold(true);
 
-	QBrush br = qVariantValue<QBrush>(index.model()->data(index, BrushRole));
+	QBrush br = index.model()->data(index, BrushRole).value<QBrush>();
 
 	if (br.style() == Qt::LinearGradientPattern ||
 	        br.style() == Qt::RadialGradientPattern ||

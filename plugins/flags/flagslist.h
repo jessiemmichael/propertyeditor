@@ -30,7 +30,7 @@
 #ifndef FLAGSLIST_H
 #define FLAGSLIST_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 #include "ui_flagsList.h"
 
 class FlagsList : public QDialog, public Ui::flagsDialog
@@ -38,7 +38,7 @@ class FlagsList : public QDialog, public Ui::flagsDialog
 	Q_OBJECT
 
 public:
-	FlagsList(QWidget* parent = 0, Qt::WFlags fl = 0);
+	FlagsList(QWidget* parent = 0, Qt::WindowFlags fl = 0);
 	~FlagsList();
 
 protected slots:

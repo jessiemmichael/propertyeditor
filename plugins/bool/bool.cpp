@@ -31,7 +31,7 @@
 #include <QMetaProperty>
 #include <QMetaEnum>
 
-#include <QPushButton>
+#include <QtWidgets/QPushButton>
 #include "bool.h"
 
 inline void initMyResource()
@@ -111,4 +111,4 @@ PropertyInterface* Bool::createInstance(QObject * object, int property, const Pr
 	return new Bool(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(boolean, Bool);
+//Q_EXPORT_PLUGIN2(boolean, Bool);

@@ -42,6 +42,8 @@ class SizeF : public PropertyInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PropertyEditor::PropertyInterface);
+	Q_PLUGIN_METADATA(IID "net.erergid.PropertyEditorPlugin" FILE "sizefplugin.json")
+	
 	Q_PROPERTY(qreal width READ width WRITE setWidth USER true)
 	Q_PROPERTY(qreal height READ height WRITE setHeight USER true)
 

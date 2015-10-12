@@ -29,7 +29,7 @@
 #ifndef PROPERTYEDITORPROPERTYEDITOR_H
 #define PROPERTYEDITORPROPERTYEDITOR_H
 
-#include <QtGui/QTreeView>
+#include <QtWidgets/QTreeView>
 #include <QtCore/QList>
 #include "propertyvalidator.h"
 

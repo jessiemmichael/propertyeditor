@@ -31,7 +31,7 @@
 #include <QPluginLoader>
 #include <QDir>
 #include <QMetaClassInfo>
-#include <QApplication>
+#include <QtWidgets/QApplication>
 
 #include "propertyeditor.h"
 #include "propertyinterface.h"

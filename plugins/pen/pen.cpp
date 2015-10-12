@@ -174,4 +174,4 @@ PropertyInterface* Pen::createInstance(QObject * object, int property, const Pro
 	return new Pen(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(pen, Pen);
+//Q_EXPORT_PLUGIN2(pen, Pen);

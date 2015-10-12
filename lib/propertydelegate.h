@@ -30,7 +30,7 @@
 #ifndef PROPERTYEDITORPROPERTYDELEGATE_H
 #define PROPERTYEDITORPROPERTYDELEGATE_H
 
-#include <QtGui/QItemDelegate>
+#include <QtWidgets/QItemDelegate>
 
 #ifdef WIN32
 #ifdef LIB_EXPORTS

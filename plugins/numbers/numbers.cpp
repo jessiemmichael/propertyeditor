@@ -31,8 +31,8 @@
 #include <QMetaProperty>
 #include <QMetaEnum>
 
-#include <QDoubleSpinBox>
-#include <QSpinBox>
+#include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QSpinBox>
 
 #include "numbers.h"
 
@@ -124,4 +124,4 @@ PropertyInterface* Numbers::createInstance(QObject * object, int property, const
 	return new Numbers(parent(), object, property, propertyModel);
 }
 
-Q_EXPORT_PLUGIN2(numbers, Numbers);
+//Q_EXPORT_PLUGIN2(numbers, Numbers);

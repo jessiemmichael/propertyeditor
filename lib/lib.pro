@@ -2,7 +2,7 @@ TEMPLATE = lib
 
 CONFIG +=   exceptions \
 dll \
-  rtti
+  rtti 
 
 macx{
 	CONFIG += lib_bundle

@@ -27,10 +27,10 @@
  *   GNU General Public License for more details.                          *
  ****************************************************************************/
 
-#include <QCompleter>
+#include <QtWidgets/QCompleter>
 #include <QItemSelectionModel>
-#include <QGraphicsScene>
-#include <QDesktopWidget>
+#include <QtWidgets/QGraphicsScene>
+#include <QtWidgets/QDesktopWidget>
 
 #include "metricfontdialog.h"
 #define screen_heightMM (((double)QDesktopWidget().screen()->height() /(double)QDesktopWidget().screen()->physicalDpiY() )*25.4)
@@ -43,7 +43,7 @@ QFont MetricFontDialog::getFont(const QFont & initial, QWidget * parent, const Q
 	return (mfd.exec()==QDialog::Accepted)?mfd.font():initial;
 }
 
-MetricFontDialog::MetricFontDialog(QWidget* parent, Qt::WFlags fl)
+MetricFontDialog::MetricFontDialog(QWidget* parent, Qt::WindowFlags fl)
 		: QDialog(parent, fl), Ui::metricFontDialog()
 {
 	setupUi(this);

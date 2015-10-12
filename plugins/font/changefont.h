@@ -30,7 +30,7 @@
 #ifndef CHANGEFONT_H
 #define CHANGEFONT_H
 
-#include <QPushButton>
+#include <QtWidgets/QPushButton>
 
 /**
 	@author BogDan Vatra <bogdan@licentia.eu>
