@@ -42,7 +42,7 @@ class Rect : public PropertyInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PropertyEditor::PropertyInterface);
-	Q_PLUGIN_METADATA(IID "net.erergid.PropertyEditorPlugin" FILE "rectplugin.json")
+	Q_PLUGIN_METADATA(IID "net.energid.PropertyEditorPlugin")
 
 	Q_PROPERTY(int x READ x WRITE setX USER true)
 	Q_PROPERTY(int y READ y WRITE setY USER true)

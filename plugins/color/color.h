@@ -43,7 +43,7 @@ class Color : public PropertyEditor::PropertyInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PropertyEditor::PropertyInterface);
-	Q_PLUGIN_METADATA(IID "net.erergid.PropertyEditorPlugin" FILE "colorplugin.json")
+	Q_PLUGIN_METADATA(IID "net.energid.PropertyEditorPlugin")
 
 public:
 	Color(QObject* parent = 0, QObject* object = 0, int property = -1, const PropertyModel * propertyModel = 0);

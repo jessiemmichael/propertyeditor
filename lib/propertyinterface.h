@@ -108,6 +108,6 @@ private:
 
 }
 
-Q_DECLARE_INTERFACE(PropertyEditor::PropertyInterface, "eu.licentia.PropertyEditor.PropetyInterface/1.0");
+Q_DECLARE_INTERFACE(PropertyEditor::PropertyInterface, "net.energid.PropertyEditorPlugin");
 
 #endif

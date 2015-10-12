@@ -41,7 +41,7 @@ class Vector3D : public PropertyInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PropertyEditor::PropertyInterface);
-	Q_PLUGIN_METADATA(IID "net.erergid.PropertyEditorPlugin" FILE "vector3dplugin.json")
+	Q_PLUGIN_METADATA(IID "net.energid.PropertyEditorPlugin")
 	
 	Q_PROPERTY(qreal x READ x WRITE setX USER true)
 	Q_PROPERTY(qreal y READ y WRITE setY USER true)

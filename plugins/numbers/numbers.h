@@ -41,7 +41,7 @@ class Numbers : public PropertyInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PropertyEditor::PropertyInterface);
-	Q_PLUGIN_METADATA(IID "net.erergid.PropertyEditorPlugin" FILE "numbersplugin.json")
+	Q_PLUGIN_METADATA(IID "net.energid.PropertyEditorPlugin")
 
 public:
 	Numbers(QObject* parent = 0, QObject* object = 0, int property = -1, const PropertyModel * propertyModel = 0);

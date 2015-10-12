@@ -41,7 +41,7 @@ class Strings : public PropertyInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PropertyEditor::PropertyInterface);
-	Q_PLUGIN_METADATA(IID "net.erergid.PropertyEditorPlugin" FILE "stringsplugin.json")
+	Q_PLUGIN_METADATA(IID "net.energid.PropertyEditorPlugin")
 
 public:
 	Strings(QObject* parent = 0, QObject* object = 0, int property = -1, const PropertyModel * propertyModel = 0);
