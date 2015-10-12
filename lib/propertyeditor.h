@@ -70,7 +70,7 @@ public slots:
 	void setObject(QObject * object);
 	void resetProperties();
 
-private:
+protected:
 	QObject *m_object;
 	QList<PropertyInterface*> m_plugins;
 	PropertyModel* m_model;

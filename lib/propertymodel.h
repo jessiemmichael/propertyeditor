@@ -81,7 +81,7 @@ public:
 private:
 	void clearCreatedProperties();
 
-private:
+protected:
 	QObject* m_object;
 	QList<PropertyInterface*> m_properties;
 	QList<PropertyInterface*> *m_plugins;
