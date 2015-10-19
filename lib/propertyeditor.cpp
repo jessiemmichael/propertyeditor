@@ -85,7 +85,7 @@ void PropertyEditor::loadPlugins()
    foreach (QString path, qApp->libraryPaths())
    {
       pluginsDir = QDir(path);
-      if(!dir.cd("propertyEditor"))
+      if(!pluginsDir.cd("propertyEditor"))
          continue;
 
       foreach(QString fileName, pluginsDir.entryList(QDir::Files))
