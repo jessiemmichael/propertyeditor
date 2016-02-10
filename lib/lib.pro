@@ -2,16 +2,17 @@ TEMPLATE = lib
 
 CONFIG +=   exceptions \
 dll \
-  rtti 
+  rtti
 
 macx{
-	CONFIG += lib_bundle
+   CONFIG += lib_bundle
 }
 
 win32: DEFINES += LIB_EXPORTS
-
+QT += core widgets
 HEADERS += propertyeditor.h \
  propertymodel.h \
+ propertyvalidator.h \
  propertyinterface.h \
  propertydelegate.h
 
@@ -25,10 +26,10 @@ TARGET = PropertyEditor
 
 DESTDIR = .
 
-include.path = $$[PROPERTY_EDITOR_INSTALL_HEADERS]
-include.files = propertyeditor.h propertyinterface.h
+#include.path = $$[PROPERTY_EDITOR_INSTALL_HEADERS]
+#include.files = propertyeditor.h propertyinterface.h
 
-target.path = $$[PROPERTY_EDITOR_INSTALL_LIBS]
+#target.path = $$[PROPERTY_EDITOR_INSTALL_LIBS]
 
-INSTALLS += include target
+#INSTALLS += include target
 
