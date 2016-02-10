@@ -26,7 +26,7 @@
  *   GNU General Public License for more details.                          *
  ****************************************************************************/
 
-#include <QDebug>
+#include <QtDebug>
 #include <QMetaProperty>
 #include <QPluginLoader>
 #include <QDir>
@@ -45,110 +45,161 @@
 namespace PropertyEditor
 {
 
-PropertyEditor::PropertyEditor(QWidget *parent)
+   PropertyEditor::PropertyEditor
+      (
+      QWidget *parent
+      )
       : QTreeView(parent), m_object(0), m_model(0), m_delegate(0)
-{
-   setAlternatingRowColors(true);
-   setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-   loadPlugins();
-   m_delegate = new PropertyDelegate(this);
-   setItemDelegate(m_delegate);
-   m_model = new PropertyModel(this, 0, &m_plugins);
-   QTreeView::setModel(m_model);
-   setSelectionMode(QTreeView::SingleSelection);
-   setSelectionBehavior(QTreeView::SelectRows);
-   setRootIsDecorated(true);
+   {
+      setAlternatingRowColors(true);
+      setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+      loadPlugins();
+      m_delegate = new PropertyDelegate(this);
+      setItemDelegate(m_delegate);
+      m_model = new PropertyModel(this, 0, &m_plugins);
+      QTreeView::setModel(m_model);
+      setSelectionMode(QTreeView::SingleSelection);
+      setSelectionBehavior(QTreeView::SelectRows);
+      setRootIsDecorated(true);
 
-   setEditTriggers(QAbstractItemView::CurrentChanged | QAbstractItemView::SelectedClicked);
-}
+      setEditTriggers(QAbstractItemView::CurrentChanged | QAbstractItemView::SelectedClicked);
+   }
 
-void PropertyEditor::loadPlugins()
-{
+   void PropertyEditor::loadPlugins
+      (
+      )
+   {
 /*
    QDir pluginsDir = QDir(qApp->applicationDirPath());
-#if defined(Q_OS_WIN)
+   #if defined(Q_OS_WIN)
    if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
       pluginsDir.cdUp();
-#elif defined(Q_OS_MAC)
+   #elif defined(Q_OS_MAC)
    if (pluginsDir.dirName() == "MacOS")
    {
       pluginsDir.cdUp();
       pluginsDir.cd("PlugIns");
    }
-#else
+   #else
    pluginsDir.cd(LIB_INSTALL_DIR);
-#endif
+   #endif
    pluginsDir.cd("propertyEditor");
-*/
+ */
 
-   QDir pluginsDir;
-   foreach (QString path, qApp->libraryPaths())
-   {
-      pluginsDir = QDir(path);
-      if(!pluginsDir.cd("propertyEditor"))
-         continue;
-
-      foreach(QString fileName, pluginsDir.entryList(QDir::Files))
+      QDir pluginsDir;
+      foreach (QString path, qApp->libraryPaths())
       {
-         QPluginLoader loader(pluginsDir.absoluteFilePath(fileName));
-         loader.setLoadHints(QLibrary::ResolveAllSymbolsHint);
-         QObject *plugin = loader.instance();
-         if (plugin && dynamic_cast<PropertyInterface*>(plugin))
-            m_plugins.push_back(dynamic_cast<PropertyInterface*>(plugin));
-         else
-            qCritical() << plugin << loader.errorString();
+         pluginsDir = QDir(path);
+         if(!pluginsDir.cd("propertyEditor"))
+            continue;
+
+         foreach(QFileInfo fileInfo, pluginsDir.entryList(QDir::Files))
+         {
+#if _DEBUG
+            if(!fileInfo.completeBaseName().endsWith(QString("Propertyd")))
+            {
+               if(!fileInfo.completeBaseName().endsWith(QString("Property")))
+               {
+                  qWarning()
+                     << QString("Invalid plugin file (ignored): %1").arg(fileInfo.fileName());
+               }
+               continue;
+            }
+#else
+            if(!fileInfo.completeBaseName().endsWith(QString("Property")))
+            {
+               if(!fileInfo.completeBaseName().endsWith(QString("Propertyd")))
+               {
+                  qWarning()
+                     << QString("Invalid plugin file (ignored): %1").arg(fileInfo.fileName());
+               }
+               continue;
+            }
+#endif
+            QPluginLoader loader(pluginsDir.absoluteFilePath(fileInfo.fileName()));
+            loader.setLoadHints(QLibrary::ResolveAllSymbolsHint);
+            QObject *plugin = loader.instance();
+            if (plugin && dynamic_cast<PropertyInterface*>(plugin))
+               m_plugins.push_back(dynamic_cast<PropertyInterface*>(plugin));
+            else
+               qCritical() << plugin << loader.errorString();
+         }
       }
    }
-}
 
-PropertyEditor::~PropertyEditor()
-{
-}
+   PropertyEditor::~PropertyEditor
+      (
+      )
+   {
+   }
 
-void PropertyEditor::setValidator(QVariant::Type type, PropertyValidator * validator)
-{
-   m_validators[type]=validator;
-}
+   void PropertyEditor::setValidator
+      (
+      QVariant::Type type,
+      PropertyValidator * validator
+      )
+   {
+      m_validators[type]=validator;
+   }
 
-PropertyValidator* PropertyEditor::validator(QVariant::Type type)
-{
-   return m_validators[type];
-}
+   PropertyValidator* PropertyEditor::validator
+      (
+      QVariant::Type type
+      )
+   {
+      return m_validators[type];
+   }
 
-void PropertyEditor::clearValidators()
-{
-   m_validators.clear();
-}
+   void PropertyEditor::clearValidators
+      (
+      )
+   {
+      m_validators.clear();
+   }
 
-QList<PropertyInterface*>* PropertyEditor::plugins()
-{
-   return &m_plugins;
-}
+   QList<PropertyInterface*>* PropertyEditor::plugins
+      (
+      )
+   {
+      return &m_plugins;
+   }
 
-void PropertyEditor::setModel(PropertyModel * model)
-{
-   m_model = model;
-   QTreeView::setModel(m_model);
-}
+   void PropertyEditor::setModel
+      (
+      PropertyModel * model
+      )
+   {
+      m_model = model;
+      QTreeView::setModel(m_model);
+   }
 
-void PropertyEditor::setObject(QObject * object)
-{
-   if (object == m_object)
-      return;
-   m_object = object;
-   if (m_model)
-      m_model->setObject(object);
-   emit(objectChanged(object));
-}
+   void PropertyEditor::setObject
+      (
+      QObject * object
+      )
+   {
+      if (object == m_object)
+         return;
 
-void PropertyEditor::resetProperties()
-{
-   if (m_model)
-      m_model->resetModel();
-}
+      m_object = object;
+      if (m_model)
+         m_model->setObject(object);
+      emit(objectChanged(object));
+   }
 
-QObject *PropertyEditor::object() const
-{
-   return m_object;
-}
+   void PropertyEditor::resetProperties
+      (
+      )
+   {
+      if (m_model)
+         m_model->resetModel();
+   }
+
+   QObject *PropertyEditor::object
+      (
+      ) const
+   {
+      return m_object;
+   }
+
 }
