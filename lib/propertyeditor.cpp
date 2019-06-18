@@ -95,6 +95,11 @@ namespace PropertyEditor
 
          foreach(QFileInfo fileInfo, pluginsDir.entryList(QDir::Files))
          {
+            // Ignore PDB files on Windows
+            if(fileInfo.suffix().compare("pdb", Qt::CaseInsensitive) == 0)
+            {
+               continue;
+            }
 #if _DEBUG
             if(!fileInfo.completeBaseName().endsWith(QString("Propertyd")))
             {
