@@ -69,25 +69,26 @@ namespace PropertyEditor
       (
       )
    {
-/*
-   QDir pluginsDir = QDir(qApp->applicationDirPath());
-   #if defined(Q_OS_WIN)
-   if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
-      pluginsDir.cdUp();
-   #elif defined(Q_OS_MAC)
-   if (pluginsDir.dirName() == "MacOS")
-   {
-      pluginsDir.cdUp();
-      pluginsDir.cd("PlugIns");
-   }
-   #else
-   pluginsDir.cd(LIB_INSTALL_DIR);
-   #endif
-   pluginsDir.cd("propertyEditor");
- */
+      QStringList pluginPaths = qApp->libraryPaths();
+      {
+         QDir pluginsDir = QDir(qApp->applicationDirPath());
+         #if defined(Q_OS_WIN)
+         if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
+            pluginsDir.cdUp();
+         #elif defined(Q_OS_MAC)
+         if (pluginsDir.dirName() == "MacOS")
+         {
+            pluginsDir.cdUp();
+            pluginsDir.cd("PlugIns");
+         }
+         #else
+         pluginsDir.cd(LIB_INSTALL_DIR);
+         #endif
+         pluginPaths.append(pluginsDir.absolutePath());
+      }
 
       QDir pluginsDir;
-      foreach (QString path, qApp->libraryPaths())
+      foreach (QString path, pluginPaths)
       {
          pluginsDir = QDir(path);
          if(!pluginsDir.cd("propertyEditor"))
