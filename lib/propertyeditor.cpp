@@ -82,7 +82,7 @@ namespace PropertyEditor
             pluginsDir.cd("PlugIns");
          }
          #else
-         pluginsDir.cd(LIB_INSTALL_DIR);
+         pluginsDir.cd("../lib");
          #endif
          pluginPaths.append(pluginsDir.absolutePath());
       }
