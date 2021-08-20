@@ -54,12 +54,14 @@ QWidget* Numbers::createEditor(QWidget * parent, const QModelIndex & index)
 		dsb->setMinimum(-1e10);
       dsb->setDecimals(6);
 		dsb->setSingleStep(0.1);
+		dsb->setKeyboardTracking(false);
 		connect(dsb, SIGNAL(valueChanged(double)), this, SLOT(setValue(double)));
 		return dsb;
 	}
 	QSpinBox *sb = new QSpinBox(parent);
 	sb->setMaximum(INT_MAX);
 	sb->setMinimum(INT_MIN);
+	sb->setKeyboardTracking(false);
 	connect(sb, SIGNAL(valueChanged(int)), this, SLOT(setValue(int)));
 	return sb;
 }
